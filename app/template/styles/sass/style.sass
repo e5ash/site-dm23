@@ -1,0 +1,577 @@
+@import url('../../libs/slick-carousel/slick/slick.css')
+@import url('../../libs/slick-carousel/slick/slick-theme.css')
+@import url('../../libs/fancybox/dist/jquery.fancybox.css')
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700')
+/* Including fonts */
+@font-face
+	src: url('../../fonts/Akrobat-Regular.otf')
+	font-family: Akrobat
+	font-weight: 400
+
+@font-face
+	src: url('../../fonts/Akrobat-SemiBold.otf')
+	font-family: Akrobat
+	font-weight: 600
+
+@font-face
+	src: url('../../fonts/Akrobat-Bold.otf')
+	font-family: Akrobat
+	font-weight: 700
+
+
+/* Global settings */
+$font-size: 22px
+$font-family-1: 'Roboto', sans-serif
+$font-family-2: 'Akrobat', sans-serif
+$color-1: #141414
+
+
+
+*
+	padding: 0
+	margin: 0
+	border: 0
+	box-sizing: border-box
+
+body
+	font-size: $font-size
+	font-family: $font-family-1
+	color: $color-1
+	background: white
+	max-width: 1360px
+	margin-left: auto
+	margin-right: auto
+
+header, nav, main, section, article, aside, footer, li, .block
+	display: block
+
+.inline-block
+	display: inline-block
+
+.hidden
+	display: none
+
+
+
+h1, h2, h3, h4, h5, h6
+	font-size: inherit
+	font-weight: inherit
+
+
+ul
+	font-size: 0
+	li
+		display: inline-block
+		font-size: $font-size
+		list-style-type: none
+
+
+a
+	color: $color-1
+	text-decoration: none
+	border-bottom: 1px solid transparent
+	transition: .3s
+
+
+.icon
+	display: inline-block
+	vertical-align: middle
+
+.input, .button, .slick-slide
+	outline: none
+
+/* Grid */
+.container
+	width: (1275px + 30px)
+	padding-left: 15px
+	padding-right: 15px
+
+.row, .clearfix
+	&:before, &:after
+		display: table
+		content: ''
+		box-sizing: border-box
+	&:after
+		clear: both
+
+.col
+	float: left
+	display: block
+	&-1
+		width: (100% / 1)
+	&-2
+		width: (100% / 2)
+	&-3
+		width: (100% / 3)
+	&-4
+		width: (100% / 4)
+	&-5
+		width: (100% / 5)
+ 
+
+	
+
+
+
+/* Form elements */
+.input
+	display: block
+	font-size: $font-size
+	font-family: $font-family-2
+	background: white
+	width: 100%
+	background: white
+	border: 2px solid #3d3d3d
+	border-radius: 17px
+	line-height: 44px
+	padding-left: 43px
+	padding-right: 40px
+	&::placeholder
+		color: #878686
+
+.textarea
+	font-size: $font-size
+	font-family: $font-family-1
+	display: block
+	background: white
+	resize: none
+	border: 1px solid #f0f0f0
+	&::placeholder
+		color: #878686
+
+
+.button
+	position: relative
+	display: block
+	font-size: $font-size
+	font-family: $font-family-1
+	cursor: pointer
+	margin-left: auto
+	margin-right: auto
+	text-align: center
+	transition: .3s
+	&_blue
+		line-height: 46px
+		color: white
+		background-color: #4266a4
+		border-radius: 13px
+		font-family: $font-family-2
+		font-size: 21px
+		letter-spacing: .18px
+		padding-left: 44px
+		padding-right: 44px
+		&:hover
+			background: darken(#4266a4, 10%)
+		&-br0
+			display: inline-block
+			color: white
+			font-size: 18px
+			text-transform: uppercase
+			letter-spacing: .18px
+			background-color: #4266a4
+			padding: 14.5px 42px
+			&:hover
+				background: darken(#4266a4, 10%)
+	&_black
+		line-height: 48px
+		color: white
+		background-color: #3d3d3d
+		display: block
+		width: 100%
+		border-radius: 17px
+		font-family: $font-family-2
+		letter-spacing: .2px
+		&:hover
+			background: darken(#3d3d3d, 10%)
+		
+
+.input, .textarea
+	transition: border-color .3s
+
+
+
+
+
+
+
+/* Blocks align */ 
+.left
+	float: left
+
+.right
+	float: right
+
+.center, .container
+	margin-left: auto
+	margin-right: auto
+
+
+.popup
+	display: none
+	padding: 30px !important
+
+
+.banner
+	color: white
+	padding-bottom: 60px
+	background: url('../../img/bg-4.png') no-repeat center
+	background-size: cover
+	&__title
+		padding-top: 45px
+		font-size: 43px
+		font-family: $font-family-2
+		text-align: center
+		text-transform: uppercase
+		font-weight: 700
+		margin-bottom: 40px
+	&__content
+		width: 1035px
+		margin-left: auto
+		margin-right: auto
+		font-size: 21px
+		font-family: $font-family-2
+		text-align: justify
+		text-transform: uppercase
+		letter-spacing: .72px
+
+
+.advantages
+	margin-top: 65px
+	&__title
+		text-align: center
+		font-size: 30px
+		font-weight: 700
+		letter-spacing: .9px
+		text-transform: uppercase
+		font-family: $font-family-2
+		&:after
+			display: block
+			content: ''
+			width: 109px
+			height: 7px
+			background-color: #ffffff
+			margin: 15px auto 32px
+	&__item
+		width: 20%
+		text-align: center
+		text-transform: uppercase
+		font-size: 18px
+		letter-spacing: .5px
+		font-family: $font-family-2
+		font-weight: 700
+		margin-top: 5px
+		
+
+
+
+
+
+
+
+
+.panel
+	padding-top: 16px
+	padding-bottom: 16px
+	text-align: center
+	font-family: $font-family-2
+	font-weight: 600
+	border-bottom: 1px solid #b5b5b5
+	&__logo
+		margin-bottom: 40px
+	&__nav, &__phone, &__callback
+		display: inline-block
+		vertical-align: middle
+	
+	&__nav
+		li
+			margin-left: 24px
+			margin-right: 24px
+			letter-spacing: 0.2px
+		a
+			display: block
+			position: relative
+			&:before
+				opacity: 0
+				content: ''
+				bottom: -10px
+				left: 0
+				position: absolute
+				width: 100%
+				height: 1px
+				background: #4266a4
+				transition: .3s
+			&:hover
+				color: #4266a4
+				&:before
+					opacity: 1
+
+	&__phone
+		font-size: 20px
+		letter-spacing: 0.2px
+		margin-right: 47px
+		margin-left: 50px
+		a
+			color: #4266a4
+
+.slider
+	padding-top: 40px
+	padding-bottom: 40px
+	&__title
+		font-size: 48px
+		letter-spacing: 1.5px
+		font-family: $font-family-2
+		text-align: center
+		font-weight: 700
+		line-height: 52px
+		margin-bottom: 45px
+	&__wrap
+		max-width: 1000px
+		margin-left: auto
+		margin-right: auto
+		img
+			max-width: 100%
+	&__item
+		// padding-left: 30px
+		// padding-right: 30px
+		img
+			margin-left: auto
+			margin-right: auto
+		
+	.slick-arrow
+		z-index: 2
+		width: auto
+		height: auto
+		&:hover
+			img
+				opacity: .5
+		&:before
+			display: none
+		img
+			transition: .3s
+	.slick-prev
+		left: 15px
+	.slick-next
+		right: 15px
+
+.title
+	font-size: 50px
+	letter-spacing: .5px
+	text-align: center
+	font-weight: 500
+	span
+		color: #4266a4
+
+
+.work
+	padding-top: 33px
+	padding-bottom: 30px
+	background: url('../../img/bg-1.png')
+	position: relative
+	.container
+	&__title
+		margin-bottom: 45px
+	&__content
+		padding-left: 150px
+		p
+			font-size: 22px
+			letter-spacing: .22px
+			font-weight: 300
+			margin-bottom: 30px
+			font-weight: 300
+		ul
+		li
+			display: block
+			margin-bottom: 13px
+			font-size: 24px
+			letter-spacing: .26px
+			font-weight: 400
+	
+	&__image
+		position: absolute
+		bottom: -5px
+		right: 0
+
+.about
+	padding-top: 20px
+	padding-bottom: 180px
+	position: relative
+	&__title
+		margin-bottom: 43px
+	&__content
+		font-size: 26px
+		p
+			margin-bottom: 40px
+			&:last-pf-type
+				margin-bottom: 0
+
+
+		.color-blue
+			color: #4266a4
+			display: block
+	&__image
+		position: absolute
+		right: 0
+		top: 30px
+		
+
+.simple
+	padding-top: 25px
+	padding-bottom: 30px
+	position: relative
+	&__title
+		margin-bottom: 12px
+		font-weight: 700
+		font-size: 45px
+	&__desc
+		max-width: 370px
+		margin-left: auto
+		margin-right: auto
+		font-size: 23px
+		letter-spacing: .24px
+		text-align: center
+		margin-bottom: 42px
+	&__content
+		padding-left: 100px
+	&__line
+		font-size: 0
+		margin-bottom: 30px
+	&__icon, &__text
+		display: inline-block
+		vertical-align: middle
+	&__icon
+		width: 65px
+		margin-right: 54px
+		text-align: center
+	&__text
+		font-size: 18px
+		line-height: 30px
+		letter-spacing: .2px
+	&__image
+		position: absolute
+		bottom: 0
+		right: 0
+
+.directions
+	padding-top: 26px
+	padding-bottom: 65px
+	background: url('../../img/bg-2.png') center top
+	text-align: center
+	&__title
+		font-size: 36px
+		letter-spacing: .36px
+		text-transform: uppercase
+		margin-bottom: 30px
+	&__image
+		line-height: 132px
+		img
+			vertical-align: bottom
+	&__list
+		margin-bottom: 40px
+	&__col
+		width: (100% / 7)
+		
+	&__text
+		font-size: 20px
+		line-height: 20px
+		letter-spacing: .2px
+		margin-top: 6px
+
+.get
+	text-align: center
+	background: #f9f9f9
+	padding-top: 20px
+	padding-bottom: 100px
+	&__title
+		font-size: 36px
+		text-transform: uppercase
+		&:after
+			content: ''
+			display: block
+			width: 149px
+			height: 2px
+			background-color: #333333
+			margin: 5px auto 60px
+	&__image
+		line-height: 93px
+		img
+			vertical-align: middle
+	&__item
+		width: 20%
+	&__image
+		margin-bottom: 7px
+	&__text
+		font-size: 26px
+.download
+	text-align: center
+	padding-top: 70px
+	padding-bottom: 70px
+	background: url('../../img/bg-3.png') no-repeat center
+	&__title
+		font-size: 36px
+		letter-spacing: .36px
+		margin-bottom: 60px
+	&__button
+		width: 350px
+
+
+.footer
+	background: #f9f9f9
+	padding-top: 45px
+	padding-bottom: 25px
+	&__title
+		font-size: 27px
+		letter-spacing: .2px
+		margin-bottom: 25px
+		text-transform: uppercase
+	&__nav
+		margin-right: 110px
+		li
+			display: block
+			margin-bottom: 13px
+			&:last-pf-type
+				margin-bottom: 0
+		a
+			font-size: 18px
+			color: #494949
+			text-transform: uppercase
+
+			&:hover
+				color: #4266a4
+				border-color: #4266a4
+	&__socials
+		margin-right: 140px
+		ul
+			li
+				display: block
+				margin-bottom: 30px
+				&:last-pf-type
+					margin-bottom: 0
+			u
+				display: inline-block
+				vertical-align: middle
+				width: 32px
+				text-align: center
+				margin-right: 10px
+			a
+				&:hover
+					color: #4266a4
+					border-color: #4266a4
+	&__phone
+		font-size: 32px
+		margin-bottom: 15px
+		a
+			color: #4266a4
+			font-weight: 700
+			font-family: $font-family-2
+	&__email
+		font-weight: 300
+
+	&__form
+		float: right
+		width: 300px
+		margin-right: 35px
+	
+
+.form
+	&__input
+		margin-bottom: 25px
